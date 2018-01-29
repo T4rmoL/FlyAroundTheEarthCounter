@@ -1,7 +1,8 @@
 package com.example.android.flyaroundtheearthcounter.feature;
 
 /**
- * Created by tats on 27.01.2018.
+ * Method that takes two different locations lattitude and longitude parameters and calculates distance between them.
+ * Got the formula from https://stackoverflow.com/questions/3694380/calculating-distance-between-two-points-using-latitude-longitude-what-am-i-doi
  */
 
 public class Location {

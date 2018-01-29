@@ -132,17 +132,18 @@
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/coformation"
+        android:layout_above="@id/confirmation"
         android:textColor="#EBEBEB"
         android:text=""
         android:textSize="40sp" />
     <TextView
-        android:id="@+id/coformation"
+        android:id="@+id/confirmation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_above="@id/btnSubmit"
         android:textColor="#EBEBEB"
+        android:visibility="invisible"
         android:layout_margin="4sp"
         android:text="@string/submit_txt"/>
 
