@@ -6,7 +6,7 @@ import android.widget.AdapterView;
 import android.widget.Toast;
 
 /**
- * Created by tats on 27.01.2018.
+ * Determines what comes from second spinner
  */
 
 public class ToOnItemSelectedListener implements AdapterView.OnItemSelectedListener {

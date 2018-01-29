@@ -6,7 +6,7 @@ import android.widget.AdapterView;
 
 
 /**
- * Created by tats on 27.01.2018.
+ * Determines what comes from first spinner
  */
 
 public class FromOnItemSelectedListener implements AdapterView.OnItemSelectedListener {

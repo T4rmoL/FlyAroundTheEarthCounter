@@ -7,7 +7,8 @@ import android.widget.SpinnerAdapter;
 
 
 /**
- * Created by tats on 27.01.2018.
+ * Location adapter that creates array with destination names along with their longitudes
+ * and lattitudes.
  */
 
 public abstract class LocationAdapter extends BaseAdapter implements SpinnerAdapter {
@@ -23,8 +24,9 @@ public abstract class LocationAdapter extends BaseAdapter implements SpinnerAdap
                 new Location("Corfu", 39.6076486, 19.9122921),
                 new Location("Melbourne", -37.669008, 144.8388333),
                 new Location("Moscow", 55.4103099, 37.9002573),
-                new Location("Shanghai", 31.1443485, 121.806079),
                 new Location("New York", 40.7681419, -73.8922882),
+                new Location("Shanghai", 31.1443485, 121.806079),
+
 
         };
         
