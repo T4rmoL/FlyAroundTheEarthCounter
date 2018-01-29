@@ -8,19 +8,20 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:alpha="0.9"
+        android:alpha="0.95"
         android:scaleType="centerCrop"
         android:src="@drawable/earthhour1" />
 
     <ProgressBar
         android:id="@+id/sProgressBar"
-        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+        style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_margin="24dp"
+        android:minHeight="20dp"
         android:max="100"
-        android:progress="80"
+        android:progress="60"
         android:progressDrawable="@drawable/custom_progress" />
 
     <LinearLayout
@@ -41,8 +42,8 @@
                 android:layout_margin="8dp"
                 android:fontFamily="sans-serif-light"
                 android:gravity="left"
-                android:text="Total km flied"
-                android:textAllCaps="true"
+                android:text="@string/total_km_flied"
+                android:textAllCaps="false"
                 android:textColor="#EBEBEB"
                 android:textSize="26sp" />
 
@@ -53,7 +54,7 @@
                 android:layout_margin="8dp"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="right"
-                android:text="0"
+                android:text="@string/placeholder"
                 android:textColor="#EBEBEB"
                 android:textSize="26sp" />
         </RelativeLayout>
@@ -70,8 +71,8 @@
                 android:layout_margin="8dp"
                 android:fontFamily="sans-serif-light"
                 android:gravity="left"
-                android:text="Trips around Earth"
-                android:textAllCaps="true"
+                android:text="@string/trips_around_earth"
+                android:textAllCaps="false"
                 android:textColor="#EBEBEB"
                 android:textSize="26sp" />
 
@@ -82,7 +83,7 @@
                 android:layout_margin="8dp"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="right"
-                android:text="0"
+                android:text="@string/placeholder"
                 android:textColor="#EBEBEB"
                 android:textSize="26sp" />
         </RelativeLayout>
@@ -105,7 +106,6 @@
             android:layout_margin="16dp"
             android:background="#F7F7F7"
             android:paddingBottom="4dp"
-
             android:paddingTop="4dp" />
 
 
@@ -113,18 +113,17 @@
 
     <Button
         android:id="@+id/btnSubmit"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="24dp"
         android:background="@drawable/buttonshape"
-        android:onClick="calculateDistance"
         android:shadowColor="#A8A8A8"
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
-        android:text="OK"
+        android:text="@string/btn_txt"
         android:textColor="#F7F7F7"
         android:textSize="30sp" />
 
@@ -133,10 +132,19 @@
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/btnSubmit"
+        android:layout_above="@id/coformation"
         android:textColor="#EBEBEB"
         android:text=""
         android:textSize="40sp" />
+    <TextView
+        android:id="@+id/coformation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/btnSubmit"
+        android:textColor="#EBEBEB"
+        android:layout_margin="4sp"
+        android:text="@string/submit_txt"/>
 
 
 </RelativeLayout>

@@ -2,11 +2,9 @@ package com.example.android.flyaroundtheearthcounter.feature;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.SpinnerAdapter;
-import android.widget.TextView;
+
 
 /**
  * Created by tats on 27.01.2018.
@@ -14,11 +12,11 @@ import android.widget.TextView;
 
 public abstract class LocationAdapter extends BaseAdapter implements SpinnerAdapter {
     private Location[] locations;
-    private final Context mContext;
+
     private final LayoutInflater mInflater;
 
     public LocationAdapter(Context context) {
-        mContext = context;
+
         mInflater = LayoutInflater.from(context);
         locations = new Location[]{
                 new Location("Tallinn", 59.4161958, 24.7997751),
@@ -29,11 +27,10 @@ public abstract class LocationAdapter extends BaseAdapter implements SpinnerAdap
                 new Location("New York", 40.7681419, -73.8922882),
 
         };
+        
     }
 
-    public Context getContext() {
-        return mContext;
-    }
+
 
     public LayoutInflater getInflater() {
         return mInflater;

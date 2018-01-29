@@ -21,9 +21,9 @@ public class ToOnItemSelectedListener implements AdapterView.OnItemSelectedListe
         Location location = (Location) parent.getAdapter().getItem(pos);
         getActivity().setTo(location);
         getActivity().calculateTripDistance();
-        Toast.makeText(parent.getContext(),
-                "OnItemSelectedListener : " + location.toString(),
-                Toast.LENGTH_SHORT).show();
+//        Toast.makeText(parent.getContext(),
+//                "OnItemSelectedListener : " + location.toString(),
+//                Toast.LENGTH_SHORT).show();
     }
 
     @Override

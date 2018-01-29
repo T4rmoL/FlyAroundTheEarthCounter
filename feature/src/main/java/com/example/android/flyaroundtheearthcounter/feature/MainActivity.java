@@ -1,10 +1,12 @@
 package com.example.android.flyaroundtheearthcounter.feature;
 
+import android.annotation.SuppressLint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     int totalKm = 0;
     int aroundWorld = 0;
     int tripDistance;
+    double currentProgress = 0.0;
 
     private static final int earthCircumference = 40075;
 
@@ -36,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         addListenerOnButton();
         addListenerOnSpinnerItemSelection();
         calculateAroundWorld();
+        calculateProgress();
     }
 
 
@@ -43,15 +47,11 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Displays total Km app user has flown.
      */
-    public void displayTotalKmFlyed(int score) {
+    public void displayTotalKmFlyed(int kms) {
         TextView scoreView = findViewById(R.id.totalKmFlyed);
-        scoreView.setText(String.valueOf(score));
+        scoreView.setText(String.valueOf(kms));
     }
 
-    public void calculateDistance(View view) {
-        totalKm = totalKm + 100;
-        displayTotalKmFlyed(totalKm);
-    }
 
     // get the selected dropdown list value
     public void addListenerOnButton() {
@@ -63,11 +63,9 @@ public class MainActivity extends AppCompatActivity {
                 totalKm = totalKm + tripDistance;
                 displayTotalKmFlyed(totalKm);
                 calculateAroundWorld();
-                Toast.makeText(MainActivity.this,
-                        "OnClickListener : " +
-                                "\nSpinner 1 : "+ String.valueOf(spinnerFrom.getSelectedItem()) +
-                                "\nSpinner 2 : "+ String.valueOf(spinnerTo.getSelectedItem()),
-                        Toast.LENGTH_SHORT).show();
+                calculateProgress();
+                spinnerFrom.setSelection(0);
+                spinnerTo.setSelection(0);
             }
 
         });
@@ -87,19 +85,35 @@ public class MainActivity extends AppCompatActivity {
         locationTo = loc;
     }
 
+    @SuppressLint("DefaultLocale")
     public void calculateTripDistance() {
         if (locationFrom == null || locationTo == null) {
             return;
         }
         tripDistance = (int) Math.round(Location.distance(locationFrom, locationTo));
         TextView txtTripDistance = findViewById(R.id.tripDistance);
-        txtTripDistance.setText(String.format ("%d", tripDistance));
-    }
+        if (tripDistance > 0) {
+            txtTripDistance.setText(String.format ("%d", tripDistance));
+            txtTripDistance.setVisibility(View.VISIBLE);
+        }
+        else {
+            txtTripDistance.setVisibility(View.INVISIBLE);
+        }
 
+
+    }
+    @SuppressLint("DefaultLocale")
     public void calculateAroundWorld() {
         aroundWorld = totalKm / earthCircumference;
         TextView txtTripDistance = findViewById(R.id.totalTripsAroundEarth);
         txtTripDistance.setText(String.format ("%d", aroundWorld));
+    }
+
+    public void calculateProgress() {
+        int modEarth = totalKm % earthCircumference;
+        currentProgress = (double) modEarth / (double) earthCircumference * 100;
+        ProgressBar progressBar = findViewById(R.id.sProgressBar);
+        progressBar.setProgress((int) currentProgress);
     }
 }
 

@@ -22,4 +22,9 @@
         <item>Tallinn</item>
 
     </string-array>
+    <string name="total_km_flied">Total km</string>
+    <string name="placeholder">0</string>
+    <string name="trips_around_earth">Trips around Earth</string>
+    <string name="submit_txt">To submit click OK</string>
+    <string name="btn_txt">OK</string>
 </resources>
