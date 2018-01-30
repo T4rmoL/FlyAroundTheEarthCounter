@@ -38,7 +38,7 @@
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="@dimen/margin_8"
                 android:fontFamily="sans-serif-light"
                 android:gravity="left"
                 android:text="@string/trips_around_earth"
@@ -50,7 +50,7 @@
                 android:id="@+id/totalTripsAroundEarth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="@dimen/margin_8"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="right"
                 android:text="@string/placeholder"
@@ -67,7 +67,7 @@
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="@dimen/margin_8"
                 android:fontFamily="sans-serif-light"
                 android:gravity="left"
                 android:text="@string/total_km_flied"
@@ -79,7 +79,7 @@
                 android:id="@+id/totalKmFlyed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="@dimen/margin_8"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="right"
                 android:text="@string/placeholder"
@@ -91,19 +91,19 @@
             android:id="@+id/spinnerFrom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_margin="@dimen/margin_16"
             android:background="#F7F7F7"
-            android:paddingBottom="4dp"
-            android:paddingTop="4dp" />
+            android:paddingBottom="@dimen/padding_4"
+            android:paddingTop="@dimen/padding_4" />
 
         <Spinner
             android:id="@+id/spinnerTo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_margin="@dimen/margin_16"
             android:background="#F7F7F7"
-            android:paddingBottom="4dp"
-            android:paddingTop="4dp" />
+            android:paddingBottom="@dimen/padding_4"
+            android:paddingTop="@dimen/padding_4" />
 
 
     </LinearLayout>
@@ -114,7 +114,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="@dimen/margin_24"
         android:background="@drawable/buttonshape"
         android:shadowColor="#A8A8A8"
         android:shadowDx="0"
@@ -122,7 +122,7 @@
         android:shadowRadius="5"
         android:text="@string/btn_txt"
         android:textColor="#F7F7F7"
-        android:textSize="30sp" />
+        android:textSize="@dimen/button_txt" />
 
     <TextView
         android:id="@+id/tripDistance"
@@ -132,7 +132,7 @@
         android:layout_centerHorizontal="true"
         android:text=""
         android:textColor="#EBEBEB"
-        android:textSize="40sp" />
+        android:textSize="@dimen/calc_txt" />
 
     <TextView
         android:id="@+id/confirmation"
@@ -140,7 +140,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/btnSubmit"
         android:layout_centerHorizontal="true"
-        android:layout_margin="4sp"
+        android:layout_margin="@dimen/padding_4"
         android:text="@string/submit_txt"
         android:textColor="#EBEBEB"
         android:visibility="invisible" />
